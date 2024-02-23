@@ -39,7 +39,7 @@ class AddressItem extends StatelessWidget {
                   .copyWith(color: active == true ? Colors.white : kTextColor),
             ),
             subtitle: Text(
-              '$addressDesc',
+              addressDesc,
               style: AppStyles.styleSemiBold14
                   .copyWith(color: active == true ? Colors.white : null),
             ),

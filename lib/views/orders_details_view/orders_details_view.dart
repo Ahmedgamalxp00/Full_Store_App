@@ -57,8 +57,8 @@ class OrdersDetailsView extends StatelessWidget {
                         Text('Shipping Address',
                             style: AppStyles.styleSemiBold18
                                 .copyWith(color: kPrimeryColor)),
-                        Text(
-                            '${controller.order.adressCity} , ${controller.order.adressStreet}',
+                        Text('${controller.order.adressDesc}',
+                            textAlign: TextAlign.center,
                             style: AppStyles.styleSemiBold18
                                 .copyWith(color: kTextColor)),
                       ],

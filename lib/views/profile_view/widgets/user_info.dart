@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:full_store_app/controllers/profile_controller.dart';
 import 'package:full_store_app/core/constants.dart';
 import 'package:full_store_app/core/utils/app_styles.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 
-class UserInfo extends StatelessWidget {
+class UserInfo extends GetView<ProfileController> {
   const UserInfo({super.key});
 
   @override
@@ -11,11 +13,11 @@ class UserInfo extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'Ahmed Gamal',
+          '${controller.userData.usersName}',
           style: AppStyles.styleExtraBold24.copyWith(color: kTextColor),
         ),
         const Gap(5),
-        const Text('myrealpage00@gmail.com'),
+        Text('${controller.userData.usersEmail}'),
         const Gap(10),
       ],
     );

@@ -14,6 +14,12 @@ abstract class AppLinks {
       "$serverLink/auth/resendverifycode.php";
   static const String testLink = "$serverLink/test.php";
 
+// user data
+  static const String addImageLink = "$serverLink/auth/addimage.php";
+  static const String editImageLink = "$serverLink/auth/editimage.php";
+  static const String getUserDataLink = "$serverLink/auth/getuserdata.php";
+  static const String userImageLink = "$serverLink/upload/users/";
+
   // forget password links
   static const String forgrtPassVerifyCodeLink =
       "$serverLink/forgetpassword/verifycode.php";

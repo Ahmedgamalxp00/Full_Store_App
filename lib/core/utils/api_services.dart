@@ -1,7 +1,10 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:get/get.dart' as gett;
+import 'package:path/path.dart';
+import 'package:http/http.dart' as http;
 
 Dio dio = gett.Get.find();
 
@@ -32,6 +35,26 @@ class ApiService {
     } else {
       throw Exception();
     }
+  }
+
+  Future<dynamic> postRequestWithFile({
+    required Map<String, String> data,
+    required String link,
+    required File file,
+  }) async {
+    var request = http.MultipartRequest("POST", Uri.parse(link));
+    var length = await file.length();
+    var stream = http.ByteStream(file.openRead());
+    var multiPartFile = http.MultipartFile("image", stream, length,
+        filename: basename(file.path));
+    request.files.add(multiPartFile);
+    data.forEach((key, value) {
+      request.fields[key] = value;
+    });
+    var myRequest = await request.send();
+    var response = await http.Response.fromStream(myRequest);
+
+    return jsonDecode(response.body);
   }
 
   // Future<dynamic> put({

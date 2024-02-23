@@ -16,20 +16,22 @@ class ApiService {
       link,
       data: data,
     );
-    // Future.delayed(const Duration(microseconds: 1000));
     return jsonDecode(response.data);
   }
 
   Future<dynamic> post({
-    required Map<String, String> data,
+    required Map<String, dynamic> data,
     required String link,
   }) async {
     var response = await dio.post(
       link,
       data: FormData.fromMap(data),
     );
-    // Future.delayed(const Duration(microseconds: 1000));
-    return jsonDecode(response.data);
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      return jsonDecode(response.data);
+    } else {
+      throw Exception();
+    }
   }
 
   // Future<dynamic> put({

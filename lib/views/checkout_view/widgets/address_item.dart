@@ -6,13 +6,12 @@ class AddressItem extends StatelessWidget {
   const AddressItem(
       {super.key,
       required this.addressName,
-      required this.addressCity,
-      required this.addressStreet,
+      required this.addressDesc,
       this.onTap,
       required this.active});
   final String addressName;
-  final String addressCity;
-  final String addressStreet;
+  final String addressDesc;
+
   final void Function()? onTap;
   final bool active;
   @override
@@ -40,7 +39,7 @@ class AddressItem extends StatelessWidget {
                   .copyWith(color: active == true ? Colors.white : kTextColor),
             ),
             subtitle: Text(
-              '$addressCity , $addressStreet',
+              '$addressDesc',
               style: AppStyles.styleSemiBold14
                   .copyWith(color: active == true ? Colors.white : null),
             ),

@@ -29,7 +29,7 @@ class AddAddressForm extends StatelessWidget {
               AddressFormfield(
                 validator: (value) => validateInput(value, 2, 50, ''),
                 keyboardType: TextInputType.name,
-                hint: 'Name',
+                hint: 'Name  ( like Home , Work )',
                 controller: addressController.nameController,
               ),
               const Gap(10),
@@ -46,20 +46,6 @@ class AddAddressForm extends StatelessWidget {
                 hint: 'Street',
                 controller: addressController.streetController,
               ),
-              const Gap(10),
-              AddressFormfield(
-                validator: (value) => validateInput(value, 2, 50, ''),
-                keyboardType: TextInputType.number,
-                hint: 'latitude',
-                controller: addressController.latController,
-              ),
-              const Gap(10),
-              AddressFormfield(
-                validator: (value) => validateInput(value, 2, 50, ''),
-                keyboardType: TextInputType.number,
-                hint: 'longitude',
-                controller: addressController.longController,
-              ),
               const Gap(20),
               CustomBottn(
                 text: 'Add Address',
@@ -67,7 +53,7 @@ class AddAddressForm extends StatelessWidget {
                   await addressController.addAddress();
                   mainViewController.onTabChange(0);
                 },
-              )
+              ),
             ],
           ),
         ),

@@ -18,7 +18,7 @@ class AddressView extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () {
-          Get.toNamed(AppRoute.addAddressView);
+          Get.toNamed(AppRoute.googleMapsView);
         },
       ),
     );

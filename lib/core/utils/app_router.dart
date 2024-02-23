@@ -2,6 +2,7 @@ import 'package:full_store_app/core/middleware/mymiddleware.dart';
 import 'package:full_store_app/test.dart';
 import 'package:full_store_app/views/address_views/add_address_view.dart';
 import 'package:full_store_app/views/address_views/address_view.dart';
+import 'package:full_store_app/views/address_views/google_maps_view.dart';
 import 'package:full_store_app/views/archived_orders_view/archived_orders_view.dart';
 import 'package:full_store_app/views/auth_views/forget_password_view.dart';
 import 'package:full_store_app/views/auth_views/login_view.dart';
@@ -48,6 +49,7 @@ class AppRoute {
   static const String cartView = "/cartView";
   static const String addressView = "/addressView";
   static const String addAddressView = "/addAddressView";
+  static const String googleMapsView = "/googleMapsView";
   static const String chechOutView = "/ChechOutView";
   static const String ordersView = "/ordersView";
   static const String ordersDetailsView = "/ordersDetailsView";
@@ -57,12 +59,12 @@ class AppRoute {
 }
 
 List<GetPage<dynamic>> myRoutes = [
-  GetPage(name: '/', page: () => const MyTest()),
-  // GetPage(
-  //   name: '/',
-  //   page: () => const LanguageView(),
-  //   middlewares: [MyMiddlewalre()],
-  // ),
+  // GetPage(name: '/', page: () => const MyTest()),
+  GetPage(
+    name: '/',
+    page: () => const LanguageView(),
+    middlewares: [MyMiddlewalre()],
+  ),
   GetPage(name: AppRoute.splashView, page: () => const SplashView()),
   GetPage(name: AppRoute.loginView, page: () => const LoginView()),
   GetPage(name: AppRoute.signUp, page: () => const SignUp()),
@@ -86,6 +88,7 @@ List<GetPage<dynamic>> myRoutes = [
   GetPage(name: AppRoute.profileView, page: () => const ProfileView()),
   GetPage(name: AppRoute.addressView, page: () => const AddressView()),
   GetPage(name: AppRoute.addAddressView, page: () => const AddAddressView()),
+  GetPage(name: AppRoute.googleMapsView, page: () => const GoogleMapsView()),
   GetPage(name: AppRoute.chechOutView, page: () => const ChechOutView()),
   GetPage(name: AppRoute.ordersView, page: () => const OrdersView()),
   GetPage(

@@ -23,8 +23,7 @@ class AddressSection extends StatelessWidget {
                 );
               },
               addressName: '${controller.addressList[index].adressName}',
-              addressCity: '${controller.addressList[index].adressCity}',
-              addressStreet: '${controller.addressList[index].adressStreet}',
+              addressDesc: '${controller.addressList[index].adressDesc}',
               active: controller.addressId ==
                       '${controller.addressList[index].adressId}'
                   ? true

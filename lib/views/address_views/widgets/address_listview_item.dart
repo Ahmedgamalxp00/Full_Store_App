@@ -18,7 +18,7 @@ class AddressListViewItem extends StatelessWidget {
           style: AppStyles.styleSemiBold18.copyWith(color: kTextColor),
         ),
         subtitle: Text(
-          '${address.adressCity} , ${address.adressStreet}',
+          '${address.adressDesc} ',
           style: AppStyles.styleSemiBold14,
         ),
         trailing:

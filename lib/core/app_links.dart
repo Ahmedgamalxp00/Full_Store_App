@@ -1,4 +1,8 @@
 abstract class AppLinks {
+  static const String placesAPILink =
+      "https://maps.googleapis.com/maps/api/place/autocomplete/json?";
+  static const String apiKey = "AIzaSyBMvmkLO9nr_PaUUgd-HTqHZxLwyVGuJj0";
+
   // server link
   static const String serverLink = "http://192.168.1.6/fullstoreapp";
 

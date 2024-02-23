@@ -52,7 +52,9 @@ dependencies:
   http: ^1.2.0
   jiffy: ^6.2.2
   line_icons: ^2.0.3
+  location: ^5.0.3
   lottie: ^3.0.0
+  geocoding: ^2.2.0
   shared_preferences: ^2.2.2
 
 dev_dependencies:

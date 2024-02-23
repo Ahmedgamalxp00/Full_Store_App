@@ -34,6 +34,7 @@ class AddressRepo {
     required String street,
     required String lat,
     required String long,
+    required String desc,
   }) async {
     try {
       var data = await apiService.post(link: AppLinks.addAddressLink, data: {
@@ -43,6 +44,7 @@ class AddressRepo {
         "street": street,
         "lat": lat,
         "long": long,
+        "desc": desc,
       });
 
       if (data['status'] == 'success') {
@@ -85,6 +87,7 @@ class AddressRepo {
     required String street,
     required String lat,
     required String long,
+    required String desc,
   }) async {
     try {
       var data = await apiService.post(link: AppLinks.editAddressLink, data: {
@@ -94,6 +97,7 @@ class AddressRepo {
         "street": street,
         "lat": lat,
         "long": long,
+        "desc": desc,
       });
       if (data['status'] == 'success') {
         return right(data);

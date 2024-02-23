@@ -24,7 +24,7 @@ class AddAddressSection extends StatelessWidget {
             text: 'Add Address',
             onTap: () async {
               Get.toNamed(
-                AppRoute.addAddressView,
+                AppRoute.addressView,
               );
             },
           ),

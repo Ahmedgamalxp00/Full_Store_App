@@ -10,16 +10,43 @@ import 'package:full_store_app/data/repos/user_data_repo.dart';
 
 import 'package:image_picker/image_picker.dart';
 
-class ProfileController extends GetxController {
-  MyServices myServices = Get.find();
+MyServices myServices = Get.find();
 
+class ProfileController extends GetxController {
   UserDataRepo userDataRepo = Get.put(UserDataRepo());
+  bool switchValue =
+      myServices.sharedPreferences.getBool("notification") ?? true;
   logOut() {
     String userId = myServices.sharedPreferences.getString("id")!;
     FirebaseMessaging.instance.unsubscribeFromTopic("users");
     FirebaseMessaging.instance.unsubscribeFromTopic("users$userId");
     myServices.sharedPreferences.clear();
     Get.offAllNamed(AppRoute.loginView);
+  }
+
+  notificationsOn() {}
+
+  changeNotification() {
+    if (switchValue == true) {
+      String userId = myServices.sharedPreferences.getString("id")!;
+      FirebaseMessaging.instance.subscribeToTopic("users");
+      FirebaseMessaging.instance.subscribeToTopic("users$userId");
+      myServices.sharedPreferences.setBool("notification", switchValue);
+      print('subscribeToTopic');
+    } else {
+      String userId = myServices.sharedPreferences.getString("id")!;
+      FirebaseMessaging.instance.unsubscribeFromTopic("users");
+      FirebaseMessaging.instance.unsubscribeFromTopic("users$userId");
+      myServices.sharedPreferences.setBool("notification", switchValue);
+      print('unsubscribeFromTopic');
+    }
+    update();
+  }
+
+  notificationsOf() {
+    String userId = myServices.sharedPreferences.getString("id")!;
+    FirebaseMessaging.instance.unsubscribeFromTopic("users");
+    FirebaseMessaging.instance.unsubscribeFromTopic("users$userId");
   }
 
   RequestState? requestState;

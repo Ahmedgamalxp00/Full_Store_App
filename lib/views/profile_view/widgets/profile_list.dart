@@ -16,16 +16,20 @@ class ProfileList extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
-          ProfileListItem(
-            title: 'Notifications',
-            svgIcon: Assets.iconsBell,
-            leading: Switch(
-              activeColor: kPrimeryColor,
-              value: true,
-              onChanged: (value) {},
-            ),
-            ontap: () {},
-          ),
+          GetBuilder<ProfileController>(builder: (controller) {
+            return ProfileListItem(
+              title: 'Notifications',
+              icon: Icons.notifications_none_outlined,
+              leading: Switch(
+                activeColor: kPrimeryColor,
+                value: controller.switchValue,
+                onChanged: (value) {
+                  controller.switchValue = value;
+                  controller.changeNotification();
+                },
+              ),
+            );
+          }),
           ProfileListItem(
             title: 'My orders',
             icon: Icons.card_travel,
@@ -51,12 +55,12 @@ class ProfileList extends StatelessWidget {
           ),
           ProfileListItem(
             title: 'Settings',
-            svgIcon: Assets.iconsSettings,
+            icon: Icons.settings_outlined,
             ontap: () {},
           ),
           ProfileListItem(
             title: 'Log Out',
-            svgIcon: Assets.iconsLogoutSvgrepoCom,
+            icon: Icons.logout,
             ontap: () {
               profileController.logOut();
             },

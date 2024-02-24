@@ -64,7 +64,7 @@ class ProfileListItem extends StatelessWidget {
             ),
           ),
         ),
-        const Gap(16),
+        const Gap(8),
       ],
     );
   }

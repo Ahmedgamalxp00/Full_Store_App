@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:full_store_app/core/app_links.dart';
@@ -5,11 +6,11 @@ import 'package:full_store_app/core/constants.dart';
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
-    Key? key,
+    super.key,
     required this.text,
     required this.press,
     this.image,
-  }) : super(key: key);
+  });
 
   final String? text;
   final String? image;
@@ -32,8 +33,12 @@ class CategoryCard extends StatelessWidget {
                   color: const Color(0xFFFFECDF),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: image == null
-                    ? const Icon(Icons.error_outline)
+                child: !image!.contains('svg')
+                    ? CachedNetworkImage(
+                        imageUrl: "${AppLinks.imageCategoriesLink}/$image",
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
+                      )
                     : Padding(
                         padding: const EdgeInsets.all(13),
                         child: SvgPicture.network(

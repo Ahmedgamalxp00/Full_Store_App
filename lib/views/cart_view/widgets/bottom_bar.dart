@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:full_store_app/controllers/cart_controller.dart';
 import 'package:full_store_app/core/constants.dart';
 import 'package:full_store_app/core/shared/custom_botton.dart';
-import 'package:full_store_app/core/utils/app_router.dart';
 import 'package:full_store_app/core/utils/app_styles.dart';
 import 'package:get/get.dart';
 

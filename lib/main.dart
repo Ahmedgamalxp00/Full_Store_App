@@ -23,11 +23,11 @@ class MyApp extends StatelessWidget {
     LanguageController languageController =
         Get.put(LanguageController(), permanent: true);
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: myTheme,
       locale: languageController.language,
       translations: MyTranslations(),
       initialBinding: MyBinding(),
-      debugShowCheckedModeBanner: false,
       getPages: myRoutes,
     );
   }

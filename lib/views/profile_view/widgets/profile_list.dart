@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:full_store_app/controllers/profile_controller.dart';
 import 'package:full_store_app/core/constants.dart';
-import 'package:full_store_app/core/utils/app_assets.dart';
 import 'package:full_store_app/core/utils/app_router.dart';
 import 'package:full_store_app/views/profile_view/widgets/profile_list_item.dart';
 import 'package:get/get.dart';

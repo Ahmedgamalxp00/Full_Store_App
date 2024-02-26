@@ -41,7 +41,7 @@ class AddAddressForm extends StatelessWidget {
               ),
               const Gap(10),
               AddressFormfield(
-                validator: (value) => validateInput(value, 2, 50, ''),
+                validator: (value) => validateInput(value, 1, 50, ''),
                 keyboardType: TextInputType.text,
                 hint: 'Street',
                 controller: addressController.streetController,

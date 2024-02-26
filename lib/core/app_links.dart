@@ -4,7 +4,7 @@ abstract class AppLinks {
   static const String apiKey = "AIzaSyBMvmkLO9nr_PaUUgd-HTqHZxLwyVGuJj0";
 
   // server link
-  static const String serverLink = "http://192.168.1.6/fullstoreapp";
+  static const String serverLink = "http://192.168.1.5/fullstoreapp";
 
   // authentication links
   static const String signUpLink = "$serverLink/auth/sginup.php";
@@ -30,6 +30,7 @@ abstract class AppLinks {
 
 //home links
   static const String homeLink = "$serverLink/home.php";
+  static const String categoryItemsLink = "$serverLink/categories/view.php";
   static const String imageCategoriesLink = "$serverLink/upload/categories";
   static const String imageItemsLink = "$serverLink/upload/items";
 

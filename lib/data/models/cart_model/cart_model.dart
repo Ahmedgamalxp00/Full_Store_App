@@ -1,5 +1,5 @@
 class CartModel {
-  int? itemspricetotal;
+  num? itemspricetotal;
   int? itemscounttotal;
   int? cartId;
   int? cartUsersid;
@@ -12,8 +12,8 @@ class CartModel {
   String? itemsImage;
   int? itemsCount;
   int? itemsActive;
-  int? itemsPrice;
-  int? itemsPriceAfterDiscount;
+  num? itemsPrice;
+  num? itemsPriceAfterDiscount;
   int? itemsDiscount;
   String? itemsCreateat;
   int? itemsCategory;
@@ -39,7 +39,7 @@ class CartModel {
       this.itemsPriceAfterDiscount});
 
   factory CartModel.fromJson(Map<String, dynamic> json) => CartModel(
-        itemspricetotal: json['itemsprice'] as int?,
+        itemspricetotal: json['itemsprice'] as num?,
         itemscounttotal: json['itemscount'] as int?,
         cartId: json['cart_id'] as int?,
         cartUsersid: json['cart_usersid'] as int?,
@@ -52,11 +52,11 @@ class CartModel {
         itemsImage: json['items_image'] as String?,
         itemsCount: json['items_count'] as int?,
         itemsActive: json['items_active'] as int?,
-        itemsPrice: json['items_price'] as int?,
+        itemsPrice: json['items_price'] as num?,
         itemsDiscount: json['items_discount'] as int?,
         itemsCreateat: json['items_createat'] as String?,
         itemsCategory: json['items_category'] as int?,
-        itemsPriceAfterDiscount: json['itemspriceaferdiscount'] as int?,
+        itemsPriceAfterDiscount: json['itemspriceaferdiscount'] as num?,
       );
 
   Map<String, dynamic> toJson() => {

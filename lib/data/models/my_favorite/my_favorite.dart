@@ -10,12 +10,12 @@ class MyFavoriteModel {
   String? itemsImage;
   int? itemsCount;
   int? itemsActive;
-  int? itemsPrice;
+  num? itemsPrice;
   int? itemsDiscount;
   String? itemsCreateat;
   int? itemsCategory;
   int? usersId;
-  int? itemsPriceAfterDiscount;
+  num? itemsPriceAfterDiscount;
 
   MyFavoriteModel(
       {this.favoritesId,
@@ -49,12 +49,12 @@ class MyFavoriteModel {
         itemsImage: json['items_image'] as String?,
         itemsCount: json['items_count'] as int?,
         itemsActive: json['items_active'] as int?,
-        itemsPrice: json['items_price'] as int?,
+        itemsPrice: json['items_price'] as num?,
         itemsDiscount: json['items_discount'] as int?,
         itemsCreateat: json['items_createat'] as String?,
         itemsCategory: json['items_category'] as int?,
         usersId: json['users_id'] as int?,
-        itemsPriceAfterDiscount: json['itemspriceaferdiscount'] as int?,
+        itemsPriceAfterDiscount: json['itemspriceaferdiscount'] as num?,
       );
 
   Map<String, dynamic> toJson() => {

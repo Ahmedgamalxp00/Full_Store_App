@@ -5,8 +5,8 @@ class OrderModel {
   int? ordersDeliveryType;
   int? oredersPaymentMethod;
   int? ordersDeliveryPrice;
-  int? ordersPrice;
-  int? ordersTotalprice;
+  num? ordersPrice;
+  num? ordersTotalprice;
   int? ordersCoupon;
   int? ordersDiscount;
   int? ordersStatus;
@@ -50,8 +50,8 @@ class OrderModel {
         ordersDeliveryType: json['orders_delivery_type'] as int?,
         oredersPaymentMethod: json['oreders_payment_method'] as int?,
         ordersDeliveryPrice: json['orders_delivery_price'] as int?,
-        ordersPrice: json['orders_price'] as int?,
-        ordersTotalprice: json['orders_totalprice'] as int?,
+        ordersPrice: json['orders_price'] as num?,
+        ordersTotalprice: json['orders_totalprice'] as num?,
         ordersCoupon: json['orders_coupon'] as int?,
         ordersDiscount: json['orders_discount'] as int?,
         ordersStatus: json['orders_status'] as int?,

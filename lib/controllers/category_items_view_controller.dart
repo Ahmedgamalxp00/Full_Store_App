@@ -3,15 +3,15 @@ import 'package:full_store_app/core/functions/custom_dialog.dart';
 import 'package:full_store_app/core/utils/request_state.dart';
 import 'package:full_store_app/data/models/category_model/category_model.dart';
 import 'package:full_store_app/data/models/items_model/item.dart';
-import 'package:full_store_app/data/repos/home_repo.dart';
+import 'package:full_store_app/data/repos/category_items_repo.dart';
 import 'package:full_store_app/services/services.dart';
 import 'package:get/get.dart';
 
-class ItemsViewController extends GetxController {
-  HomeRepo homeRepo = Get.put(HomeRepo());
+class CategoryItemsViewController extends GetxController {
+  CategoryItemsRepo categoryItemsRepo = Get.put(CategoryItemsRepo());
 
   RequestState? requestState;
-  List<ItemModel> items = [];
+
   late String requestError;
   List<CategoryModel> categoies = [];
   late int currentCat;
@@ -21,33 +21,28 @@ class ItemsViewController extends GetxController {
   List<ItemModel> searchItems = [];
   TextEditingController searchController = TextEditingController();
 
-  changeCategory(int index) {
+  changeCategory(int index) async {
     if (currentCat != index) {
       categoryItems.clear();
       currentCat = index;
+      await getCategoryItems();
       update();
     }
   }
 
-  getData(int categoryId) async {
+  getCategoryItems() async {
     requestState = RequestState.loading;
     update();
-    var resulte = await homeRepo
-        .getAllData(myServices.sharedPreferences.getString("id") as String);
+    var resulte = await categoryItemsRepo.getCategoryItems(
+        userId: myServices.sharedPreferences.getString("id") as String,
+        categoryId: "${categoies[currentCat].categoriesId}");
 
     resulte.fold((failure) {
       requestError = failure.erorrMassage;
       requestState = RequestState.failure;
-      customDialog(title: 'Error', body: failure.erorrMassage);
     }, (data) {
-      for (var item in data['items']) {
-        items.add(ItemModel.fromJson(item));
-      }
-      for (var item in items) {
-        if (item.categoriesId == categoryId) {
-          categoryItems.clear();
-          categoryItems.add(item);
-        }
+      for (var item in data['data']) {
+        categoryItems.add(ItemModel.fromJson(item));
       }
       requestState = RequestState.success;
     });
@@ -74,7 +69,7 @@ class ItemsViewController extends GetxController {
   @override
   void onInit() {
     inialData();
-    getData(categoies[currentCat].categoriesId as int);
+    getCategoryItems();
     categoriesScrollController =
         ScrollController(initialScrollOffset: 50 * currentCat.toDouble());
     super.onInit();

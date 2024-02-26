@@ -101,6 +101,7 @@ class ProductItem2 extends StatelessWidget {
                   Hero(
                     tag: "${item.itemsId}",
                     child: CachedNetworkImage(
+                      height: 120,
                       imageUrl: '${AppLinks.imageItemsLink}/${item.itemsImage}',
                       errorWidget: (context, url, error) =>
                           const Icon(Icons.error),

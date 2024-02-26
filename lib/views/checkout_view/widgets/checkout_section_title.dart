@@ -18,7 +18,7 @@ class CheckOutSectionTiTle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,
-              style: AppStyles.styleSemiBold20.copyWith(color: kPrimeryColor)),
+              style: AppStyles.styleSemiBold20.copyWith(color: kTextColor)),
         ],
       ),
     );

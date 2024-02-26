@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:full_store_app/controllers/items_view_controller.dart';
+import 'package:full_store_app/controllers/category_items_view_controller.dart';
 import 'package:full_store_app/core/shared/custom_appbar.dart';
 import 'package:full_store_app/views/items_view/widgets/Categories_list.dart';
 import 'package:full_store_app/views/items_view/widgets/categories_items_list.dart';
@@ -10,7 +10,8 @@ class ItemsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ItemsViewController itemsViewController = Get.put(ItemsViewController());
+    CategoryItemsViewController itemsViewController =
+        Get.put(CategoryItemsViewController());
     return Scaffold(
       body: Stack(
         children: [
@@ -22,7 +23,8 @@ class ItemsView extends StatelessWidget {
               const SliverToBoxAdapter(
                 child: CategoriesList(),
               ),
-              SliverFillRemaining(child: GetBuilder<ItemsViewController>(
+              SliverFillRemaining(
+                  child: GetBuilder<CategoryItemsViewController>(
                 builder: (controller) {
                   return CategoriesItemsList(
                       categoryItems: controller.searchController.text.isNotEmpty

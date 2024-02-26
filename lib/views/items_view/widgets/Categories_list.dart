@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:full_store_app/controllers/items_view_controller.dart';
+import 'package:full_store_app/controllers/category_items_view_controller.dart';
 import 'package:full_store_app/core/utils/app_styles.dart';
 import 'package:get/get.dart';
 
@@ -8,8 +8,8 @@ class CategoriesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.find<ItemsViewController>();
-    return GetBuilder<ItemsViewController>(
+    Get.find<CategoryItemsViewController>();
+    return GetBuilder<CategoryItemsViewController>(
       builder: (controller) {
         return SizedBox(
           height: 35,
@@ -21,8 +21,6 @@ class CategoriesList extends StatelessWidget {
             itemBuilder: (context, index) => CategoryItem(
               ontap: () {
                 controller.changeCategory(index);
-                controller
-                    .getData(controller.categoies[index].categoriesId as int);
               },
               categoryName:
                   controller.categoies[index].categoriesName as String,

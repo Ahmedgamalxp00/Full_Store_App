@@ -7,8 +7,8 @@ class ItemModel {
   String? itemsImage;
   int? itemsCount;
   int? itemsActive;
-  int? itemsPrice;
-  int? itemsPriceAfterDiscount;
+  num? itemsPrice;
+  num? itemsPriceAfterDiscount;
   int? itemsDiscount;
   int? favorite;
   String? itemsCreateat;
@@ -49,8 +49,8 @@ class ItemModel {
         itemsImage: json['items_image'] as String?,
         itemsCount: json['items_count'] as int?,
         itemsActive: json['items_active'] as int?,
-        itemsPrice: json['items_price'] as int?,
-        itemsPriceAfterDiscount: json['itemspriceaferdiscount'] as int?,
+        itemsPrice: json['items_price'] as num?,
+        itemsPriceAfterDiscount: json['itemspriceaferdiscount'] as num?,
         itemsDiscount: json['items_discount'] as int?,
         favorite: json['favorite'] as int?,
         itemsCreateat: json['items_createat'] as String?,

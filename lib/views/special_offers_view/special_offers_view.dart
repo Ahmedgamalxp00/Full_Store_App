@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:full_store_app/controllers/home_controller.dart';
 import 'package:full_store_app/core/shared/custom_appbar.dart';
-import 'package:full_store_app/views/items_view/widgets/categories_items_list.dart';
+import 'package:full_store_app/views/category_items_view/widgets/categories_items_list.dart';
 import 'package:get/get.dart';
 
 class SpecialOffersView extends StatelessWidget {

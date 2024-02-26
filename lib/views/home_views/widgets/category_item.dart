@@ -34,13 +34,16 @@ class CategoryCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: !image!.contains('svg')
-                    ? CachedNetworkImage(
-                        imageUrl: "${AppLinks.imageCategoriesLink}/$image",
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
+                    ? Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: CachedNetworkImage(
+                          imageUrl: "${AppLinks.imageCategoriesLink}/$image",
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                        ),
                       )
                     : Padding(
-                        padding: const EdgeInsets.all(13),
+                        padding: const EdgeInsets.all(10),
                         child: SvgPicture.network(
                           "${AppLinks.imageCategoriesLink}/$image",
                           color: kPrimeryColor,

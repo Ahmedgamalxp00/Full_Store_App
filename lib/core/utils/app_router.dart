@@ -12,11 +12,11 @@ import 'package:full_store_app/views/auth_views/reset_password_view.dart';
 import 'package:full_store_app/views/auth_views/signup_view.dart';
 import 'package:full_store_app/views/auth_views/success_view.dart';
 import 'package:full_store_app/views/cart_view/cart_view.dart';
+import 'package:full_store_app/views/category_items_view/category_items_view.dart';
 import 'package:full_store_app/views/checkout_view/checkout_view.dart';
 import 'package:full_store_app/views/favorite_views/favorite_view.dart';
 import 'package:full_store_app/views/home_views/home_view.dart';
 import 'package:full_store_app/views/main_view.dart';
-import 'package:full_store_app/views/items_view/items_view.dart';
 import 'package:full_store_app/views/language_view/language_view.dart';
 import 'package:full_store_app/views/notification_view/notification_view.dart';
 import 'package:full_store_app/views/orders_details_view/orders_details_view.dart';
@@ -76,7 +76,7 @@ List<GetPage<dynamic>> myRoutes = [
   GetPage(name: AppRoute.successView, page: () => const SuccessView()),
   GetPage(name: AppRoute.homeView, page: () => const HomeView()),
   GetPage(name: AppRoute.mainView, page: () => const MainView()),
-  GetPage(name: AppRoute.itemsView, page: () => const ItemsView()),
+  GetPage(name: AppRoute.itemsView, page: () => const CategoryItemsView()),
   GetPage(name: AppRoute.topSellingView, page: () => const TopSellingView()),
   GetPage(
       name: AppRoute.specialOffersView, page: () => const SpecialOffersView()),
